@@ -1553,13 +1553,20 @@ footer .sns-ball .active-btn::before {
   padding: 8px;
   border: none;
   outline: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+}
+.search-modal .search-content .search-field input[type=search]::-webkit-search-cancel-button,
+.search-modal .search-content .search-field input[type=button]::-webkit-search-cancel-button {
+  display: none;
+}
+.search-modal .search-content .search-field input[type=search]::-webkit-search-decoration,
+.search-modal .search-content .search-field input[type=button]::-webkit-search-decoration {
+  -webkit-appearance: none;
 }
 .search-modal .search-content .search-field input[type=search] {
   padding-left: 35px;
   border-radius: 3px 0 0 3px;
-}
-.search-modal .search-content .search-field input[type=search]::-webkit-search-cancel-button, .search-modal .search-content .search-field input[type=search]::-ms-clear, .search-modal .search-content .search-field input[type=search]::-ms-reveal {
-  display: none;
 }
 .search-modal .search-content .search-field input[type=button] {
   background-color: #1940B0;
