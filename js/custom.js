@@ -158,7 +158,6 @@ const swiper = new Swiper('.lense-area .swiper', {
           start: 'top 80%',
           end: 'center 80%',
         },
-        marked:true
       });
     });
   

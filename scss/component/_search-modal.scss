@@ -15,7 +15,7 @@
   &.active {
     opacity: 1;
     visibility: visible;
-    height: 130px;
+    height: 155px;
   }
 
   .search-close {
@@ -28,11 +28,12 @@
     cursor: pointer;
   }
   .search-content {
-    width: 300px;
 
     .search-field {
       position: relative;
       display: flex;
+      justify-content: center;
+      align-items: center;
 
       &::before {
         content: '\f002';
@@ -55,7 +56,9 @@
         padding-left: 35px;
         border-radius: 3px 0 0 3px;
 
-        &::-webkit-search-cancel-button {
+        &::-webkit-search-cancel-button,
+        &::-ms-clear,
+        &::-ms-reveal {
           display: none;
         }
       }
