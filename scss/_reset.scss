@@ -1,0 +1,37 @@
+* {
+  font-family: $font-default;
+  font-size: 15px;
+  color: $color-default;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+      text-decoration: none;
+  }
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  &:disabled {
+      cursor: not-allowed;
+  }
+}

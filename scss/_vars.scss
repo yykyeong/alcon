@@ -1,0 +1,36 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
+
+$font-default : 'Noto Sans KR', sans-serif;
+
+
+/* color */
+$color-default : #333;
+$white : #fff;
+
+$point-color : #1940B0;
+$point-color-text : #16a3fe;
+$opti-green : #00572b;
+
+$primary-color :#23c99d;
+$orange : #f6be26;
+$border : rgba(219, 228, 247, 0.75);
+$bg-color : rgba(246, 250, 253, 0.2);
+$overlay-color :rgba(12, 25, 90, 0.7);
+
+$gradient : linear-gradient(to right, #16a3fe 0%, #23c99d 100%);
+
+$dailies : #5f3d47;
+$dailies-gd : linear-gradient(150deg, #3c212a 0%,#6b4653 61%,#e9c14e 100%);;
+
+$freshlook :  #EF1E8C;
+$fresh-gd : linear-gradient(150deg, #772ea5 0%,#a847ba 61%,#f59856 100%);
+
+$precision : #0091c1;
+$pre-gd : linear-gradient(150deg, #6bcaba 0%,#2c5697 55%,#84329b 100%);
+
+
+
+
+$header-height : 60px;
+

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/favicon.ico">
+  <title>알콘</title>
+
+  <!-- gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+
+  <!--swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- font Awesome -->
+  <script src="https://kit.fontawesome.com/96aea79129.js" crossorigin="anonymous"></script>
+
+  <!-- custom -->
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/custom.js"></script>
+
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <h2 class="header-logo">
+      <img src="./img/logo.png" alt="alcon">
+    </h2>
+
+    <nav class="nav-area">
+
+      <ul class="nav-list">
+        <li class="nav-item">
+          <h3 href="#none" class="nav-title">알콘</h3>
+          <ul class="sub-nav-list">
+            <li class="sub-nav-item">
+              <a href="#none">기업소개</a>
+              <a href="#none">기업철학</a>
+              <a href="#none">연혁</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <h3 href="#none" class="nav-title">제품소개</h3>
+          <ul class="sub-nav-list">
+            <li class="sub-nav-item">
+              <a href="#none">매일착용 렌즈</a>
+              <a href="#none">매일착용 컬러렌즈</a>
+              <a href="#none">연속착용 렌즈</a>
+              <a href="#none">렌즈 관리용액</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <h3 href="#none" class="nav-title">렌즈사용팁</h3>
+          <ul class="sub-nav-list">
+            <li class="sub-nav-item">
+              <a href="#none">렌즈 착용 및 제거법</a>
+              <a href="#none">올바른 렌즈 관리법</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <h3 href="#none" class="nav-title">고객지원</h3>
+          <ul class="sub-nav-list">
+            <li class="sub-nav-item">
+              <a href="#none">공지사항</a>
+              <a href="#none">1:1문의</a>
+              <a href="#none">안경원 찾기</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <h3 href="#none" class="nav-title">안경원</h3>
+          <ul class="sub-nav-list">
+            <li class="sub-nav-item">
+              <a href="#none">주문</a>
+              <a href="#none">교육</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+
+    <div class="search-modal">
+      <i class="search-close fa-solid fa-x"></i>
+      <div class="search-content">
+        <div class="search-field">
+          <input type="search" placeholder="검색">
+          <input type="button" value="Search">
+        </div>
+      </div>
+    </div>
+
+    <div class="trigger">
+      <span></span>
+    </div>
+
+    <div class="dimmed-layer hidden"></div>
+
+  </header>
+
+  <!-- main -->
+  <div class="main">
+
+    <!-- visual-area -->
+    <section class="visual-area">
+      <div class="visual-inner">
+        <h2 class="visual-slogan">
+          <div class="alcon">
+            <div class="alcon-mask">
+              <div class="alcon-text">alcon</div>
+            </div>
+          </div>
+          더 나은 삶을 위한 더 나은 시력,<br>
+          알콘이 함께 합니다.
+          <p class="deco-content">
+            <span class="deco-txt">Better Eyes for a Better Life</span>
+            <span class="deco-bar"></span>
+          </p>
+        </h2>
+        <div class="visual-item">
+          <img src="./img/visual01.png" alt="TOTAL 1">
+          <a href="#none" class="more-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            제품 자세히 보기
+          </a>
+        </div>
+        <div class="visual-item">
+          <img src="./img/visual02.png" alt="DAILIES ILLUMINATE">
+          <a href="#none" class="more-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            제품 자세히 보기
+          </a>
+        </div>
+        <div class="visual-item">
+          <img src="./img/visual03.png" alt="Night&Day AQUA">
+          <a href="#none" class="more-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            제품 자세히 보기
+          </a>
+        </div>
+        <div class="visual-item">
+          <img src="./img/visual04.png" alt="OPTI-FREE">
+          <a href="#none" class="more-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            제품 자세히 보기
+          </a>
+        </div>
+      </div>
+      <div class="wave-content">
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+          <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+          </defs>
+          <g class="parallax">
+            <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <!-- store-area -->
+    <section class="store-area">
+      <div class="store-card">
+        <div class="store-icon">
+          <img src="./img/local-icon.png" alt="매장찾기">
+        </div>
+        <div class="store-content">
+          <h2 class="store-title">판매처 찾기</h2>
+          <p class="store-desc">알콘 판매 안경원을 찾아 보세요!</p>
+          <a href="#none" class="store-btn">
+            <img src="./img/arrow-icon.svg" alt="판매처 찾기">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- lense-area -->
+    <section class="lense-area">
+      <div class="lense-content">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide lense lense01">
+              <h2 class="lense-title">
+                <img src="./img/lense-logo01.png" alt="dailies total1">
+              </h2>
+              <p class="lense-desc">촉촉함이 필요한 순간
+                데일리스 토탈원
+              </p>
+              <a href="#none" class="lense-link">자세히 보기<img src="./img/arrow-icon.svg" alt="링크"></a>
+              <div class="lense-img">
+                <img src="./img/lense-prd01.png" alt="데일리스 토탈원">
+              </div>
+              <div class="lense-deco deco01"></div>
+              <div class="lense-deco deco02"></div>
+              <div class="lense-deco deco03"></div>
+            </div>
+            <div class="swiper-slide lense lense02">
+              <h2 class="lense-title">
+                <img src="./img/lense-logo02.png" alt="precision1">
+              </h2>
+              <p class="lense-desc">오래 지속되는 촉촉한 착용감 프리시전 원
+              </p>
+              <a href="#none" class="lense-link">자세히 보기<img src="./img/arrow-icon.svg" alt="링크"></a>
+              <div class="lense-img">
+                <img src="./img/lense-prd02.png" alt="데일리스 토탈원">
+              </div>
+              <div class="lense-deco deco01"></div>
+              <div class="lense-deco deco02"></div>
+              <div class="lense-deco deco03"></div>
+            </div>
+            <div class="swiper-slide lense lense03">
+              <h2 class="lense-title">
+                <img src="./img/lense-logo03.png" alt="freshlook">
+              </h2>
+              <p class="lense-desc">자연스러운 눈빛 후레쉬룩
+              </p>
+              <a href="#none" class="lense-link">자세히 보기<img src="./img/arrow-icon.svg" alt="링크"></a>
+              <div class="lense-img">
+                <img src="./img/lense-prd03.png" alt="데일리스 토탈원">
+              </div>
+              <div class="lense-deco deco01"></div>
+              <div class="lense-deco deco02"></div>
+              <div class="lense-deco deco03"></div>
+            </div>
+          </div>
+          <div class="swiper-pagination">
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- opti-area -->
+    <section class="opti-area">
+
+      <h2 class="opti-title">
+        <div class="opti-logo">
+          <img src="./img/opti-logo.png" alt="opti-free">
+        </div>
+      </h2>
+
+      <div class="opti-content">
+        <ul class="opti-list">
+          <li class="opti-item">
+            <div class="opti-name">익스프레스</div>
+            <figure class="opti-img">
+              <img src="./img/opti01.png" alt="옵티프리 익스프레스">
+              <figcaption>스텐다드형<b>매일 편안하게</b></figcaption>
+            </figure>
+            <ul class="hash-list">
+              <li class="hash-item">모든 소프트렌즈 착용자</li>
+              <li class="hash-item">렌즈를 처음 사용하는 사람</li>
+            </ul>
+          </li>
+
+          <li class="opti-item">
+            <div class="opti-name">리플레니시</div>
+            <div class="opti-info">
+              <figure class="opti-img">
+                <img src="./img/opti02.png" alt="옵티프리 리플레니시">
+                <figcaption>어드벤스형<b>더욱 촉촉하게</b></figcaption>
+              </figure>
+              <ul class="hash-list">
+                <li class="hash-item">장기간 렌즈착용</li>
+                <li class="hash-item">쉽게 건조함을 느낄 때</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="opti-item">
+            <div class="opti-name">퓨어모이스트</div>
+            <div class="opti-info">
+              <figure class="opti-img">
+                <img src="./img/opti03.png" alt="옵티프리 퓨어모이스트">
+                <figcaption>프리미어형<b>종일 촉촉하게</b></figcaption>
+              </figure>
+              <ul class="hash-list">
+                <li class="hash-item">장기간 렌즈착용</li>
+                <li class="hash-item">하루종일 렌즈 착용</li>
+                <li class="hash-item">실리콘 하이드로겔 렌즈 사용</li>
+              </ul>
+
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- guide-area  -->
+    <section class="guide-area">
+      <div class="guide-title">
+        <h2>렌즈 관리법</h2>
+        <span class="arrow"></span>
+      </div>
+
+      <div class="guide-content">
+        <div class="guide-list">
+          <!-- onday -->
+          <div class="guide-item oneday-guide">
+            <div class="guide-item-title">원데이 렌즈</div>
+            <div class="guide-order-wrap">
+              <ul class="guide-order-content">
+                <li class="guide-order-item">
+                  <div class="guide-num">
+                    <span class="guide-progress-bar">1</span>
+                  </div>
+                  <div class="guide-img"><img src="./img/guide-daily01.png" alt="손 씻기"></div>
+                  <div class="guide-desc">
+                    <b>렌즈 착용 전, 꼭 손을 씻으세요!</b>
+                    눈에 염증이나 오염을 방지하기 위해 손을 깨끗이 씻은 후, 완전히 건조된 상태에서 렌즈를 착용하세요.
+                  </div>
+                </li>
+                <li class="guide-order-item">
+                  <div class="guide-num">
+                    <span class="guide-progress-bar">2</span>
+                  </div>
+                  <div class="guide-img"><img src="./img/guide-oneday02.png" alt="재사용 금지"></div>
+                  <div class="guide-desc">
+                    <b>원데이 렌즈는 재사용 금지!</b>
+                    원데이 렌즈는 하루만 착용하는 렌즈입니다.
+                    눈건강을 위해 '하루착용' 원칙을 지켜주세요
+                  </div>
+                </li>
+                <li class="guide-order-item">
+                  <div class="guide-num">
+                    <span class="guide-progress-bar">3</span>
+                  </div>
+                  <div class="guide-img"><img src="./img/guide-oneday03.png" alt="수돗물 금지"></div>
+                  <div class="guide-desc">
+                    <b>급하다고 수돗물 사용 금지!</b>
+                    렌즈 세척이 필요한 경우, 꼭 렌즈 관리용액을 사용해주세요.
+                    수돗물은 각막염의 감염을 일으킬 수 있어요!
+                    렌즈를 끼고 샤워나 수영도 NO!
+                  </div>
+                </li>
+                <li class="guide-order-item">
+                  <div class="guide-num">
+                    <span class="guide-progress-bar">4</span>
+                  </div>
+                  <div class="guide-img"><img src="./img/guide-oneday04.png" alt="렌즈 제거도 청결하게"></div>
+                  <div class="guide-desc">
+                    <b>렌즈 제거도 청결하게!</b>
+                    청결하지 않은 손으로 렌즈 제거 시,
+                    외부 오염물질로 눈에 자극이 갈 수 있어요.
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="prd-img"><img src="./img/onedayimg.png" alt="원데이워터렌즈"></div>
+          </div>
+
+          <!-- daily -->
+          <div class="guide-item daily-guide">
+            <div class="guide-item-title">데일리 렌즈</div>
+            <div class="guide-order-wrap">
+              <ul class="guide-order-content">
+                <li class="guide-order-item">
+                  <div class="guide-num">
+                    <span class="guide-progress-bar">1</span>
+                  </div>
+                  <div class="guide-img"><img src="./img/guide-daily01.png" alt="손 씻기"></div>
+                  <div class="guide-desc">
+                    <b>렌즈 착용 전, 꼭 손을 씻으세요!</b>
+                    눈에 염증이나 오염을 방지하기 위해 손을 깨끗이 씻은 후, 완전히 건조된 상태에서 렌즈를 착용하세요.
+                  </div>
+                </li>
+                <li class="guide-order-item">
+                  <div class="guide-num">
+                    <span class="guide-progress-bar">2</span>
+                  </div>
+                  <div class="guide-img"><img src="./img/guide-daily02.png" alt="같은 방향으로 제거하기"></div>
+                  <div class="guide-desc">
+                    <b>항상 같은 방향부터 제거해주세요!</b>
+                    왼쪽, 오른쪽 렌즈가 섞이지 않도록 항상 같은 방향부터 렌즈를 제거하세요.
+                  </div>
+                </li>
+                <li class="guide-order-item">
+                  <div class="guide-num">
+                    <span class="guide-progress-bar">3</span>
+                  </div>
+                  <div class="guide-img"><img src="./img/guide-daily03.png" alt="렌즈 관리용액은 수시로 갈아주세요!"></div>
+                  <div class="guide-desc">
+                    <b>렌즈 관리용액은 수시로 갈아주세요!</b>
+                    오래된 렌즈 관리용액은 렌즈를 오염시킬 수 있어요.
+                    렌즈통에 담긴 렌즈 관리용액을 수시로 갈아주세요.
+                  </div>
+                </li>
+                <li class="guide-order-item">
+                  <div class="guide-num">
+                    <span class="guide-progress-bar">4</span>
+                  </div>
+                  <div class="guide-img"><img src="./img/guide-daily04.png" alt="렌즈 착용 후 꼭 세척"></div>
+                  <div class="guide-desc">
+                    <b>렌즈 착용 후 꼭 세척해주세요!</b>
+                    깨끗한 손바닥 위에 올려 살살 문질러주고
+                    렌즈 관리용액으로 헹구면 이물질 오염을 막을 수 있어요!
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="prd-img"><img src="./img/dailyimg.png" alt="데일리"></div>
+          </div>
+
+          <!-- case -->
+          <div class="guide-item case-guide">
+            <div class="guide-item-title">렌즈 케이스</div>
+            <div class="guide-order-wrap">
+              <ul class="guide-order-content">
+                <li class="guide-order-item">
+                  <div class="guide-num">
+                    <span class="guide-progress-bar">1</span>
+                  </div>
+                  <div class="guide-img"><img src="./img/guide-case01.png" alt="오래된 용액은 비워주세요!"></div>
+                  <div class="guide-desc">
+                    <b>오래된 용액은 비워주세요!</b>
+                    렌즈 관리용액을 렌즈 케이스에 오래 보관했다면
+                    용액을 버리고 케이스를 비워주세요
+                  </div>
+                </li>
+                <li class="guide-order-item">
+                  <div class="guide-num">
+                    <span class="guide-progress-bar">2</span>
+                  </div>
+                  <div class="guide-img"><img src="./img/guide-case02.png" alt="렌즈 관리용액으로 케이스 헹궈주세요!"></div>
+                  <div class="guide-desc">
+                    <b>렌즈 관리용액으로 케이스 헹궈주세요!</b>
+                    물이 아닌 렌즈 관리용액으로 렌즈 케이스를 헹궈 주세요.
+                  </div>
+                </li>
+                <li class="guide-order-item">
+                  <div class="guide-num">
+                    <span class="guide-progress-bar">3</span>
+                  </div>
+                  <div class="guide-img"><img src="./img/guide-case03.png" alt="렌즈 케이스를 건조시켜 주세요!"></div>
+                  <div class="guide-desc">
+                    <b>렌즈 케이스를 건조 시켜 주세요!</b>
+                    깨끗한 티슈 위에 뒤집어 두어 자연 건조 시켜주세요.
+                  </div>
+                </li>
+                <li class="guide-order-item">
+                  <div class="guide-num">
+                    <span class="guide-progress-bar">4</span>
+                  </div>
+                  <div class="guide-img"><img src="./img/guide-case04.png" alt="렌즈 케이스는 주기적으로 교체해주세요!"></div>
+                  <div class="guide-desc">
+                    <b>렌즈 케이스는 주기적으로 교체해주세요!</b>
+                    정기적으로 렌즈 케이스를 교체해주세요.
+                    보통 3개월 마다 교체하는 것을 권장합니다.
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+
+            <div class="prd-img"><img src="./img/caseimg.png" alt="렌즈케이스"></div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="./img/logo.png" alt="Alcon">
+      </div>
+      <div class="copyright">
+        <div class="policy">
+          <a href="#none">회원 약관</a>
+          <a href="#none">쿠키 정보</a>
+          <a href="#none">개인정보처리 방침</a>
+        </div>
+        <div class="address">
+          <span>
+            한국알콘(주) | 대표자 : 최준호 | 사업자번호 : 116-84-03700 | 개인정보보호책임자 : 조민아
+          </span>
+          <span>
+            주소 : 서울특별시 강남구 테헤란로 534
+            글라스타워 6층 (135-708) ㅣ 이메일: info@startupmate.com
+          </span>
+          <span class="call">
+            080-566-9202
+            상담시간 : 월~금 오전 10시~오후6시
+            (토/일 공휴일 휴무)
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="sns-ball">
+      <a href="#none" target="_blank">
+        <i class="fa-brands fa-instagram sns1"></i>instagram
+      </a>
+      <a href="#none" target="_blank">
+        <i class="fa-solid fa-comment sns2"></i>
+        kakaotalk
+      </a>
+      <a href="#none" target="_blank">
+        <i class="fa-brands fa-youtube sns3">
+        </i>youtube
+      </a>
+      <div class="active-btn"></div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+body.fixed {
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.main {
+  padding-top: $header-height;
+}
+
+.dimmed-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $overlay-color;
+  opacity: 1;
+  transition: opacity 0.3s ease; 
+
+  
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@mixin scroll-x {
+    overflow-x: auto;
+    overflow-y: hidden;
+    // white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+// visual
+@keyframes mask {
+  to {
+    transform: translateX(170px);
+  }
+}
+
+@keyframes text {
+  to {
+    transform: translateX(-170px);
+  }
+}
+
+@keyframes visual-wave {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+// 더보기
+@keyframes more01{
+  0%{
+      left: -100%;
+  }
+  50%,100%{
+      left: 100%;
+  }
+}
+
+@keyframes more02{
+  0%{
+      top: -100%;
+  }
+  50%,100%{
+      top: 100%;
+  }
+}
+
+@keyframes more03{
+  0%{
+      right: -100%;
+  }
+  50%,100%{
+      right: 100%;
+  }
+}
+
+@keyframes more04{
+  0%{
+      bottom: -100%;
+  }
+  50%,100%{
+      bottom: 100%;
+  }
+}
+
+
+
+
+// guide
+@keyframes arrow {
+  0%,100% {
+    top: 45%;
+  }
+  50% {
+    top: 55%;
+  }
+}
+
+
