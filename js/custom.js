@@ -62,44 +62,42 @@ gsap.to(visualInner, {
 
 const decoTxt = document.querySelector('.deco-txt')
 const decoBar = document.querySelector('.deco-bar')
-const decoTxtWidth = decoTxt.offsetWidth;
+let decoTxtWidth = decoTxt.offsetWidth;
 
 gsap.timeline({
-    delay: .2
-  })
-  .set(decoTxt, {
-    color: '#fff',
-    fontWeight: 'bold',
-    opacity: 0,
-    x: 0
-  })
-  .set(decoBar, {
-    left: 1,
-    backgroundColor: '#fff',
-    immediateRender: true
-  })
-
-  .to(decoBar, {
-    duration: .05,
-    backgroundColor: '#fff'
-  }, '+=0.15')
-  .to(decoBar, {
-    duration: 1,
-    width: decoTxtWidth,
-    ease: Power2.easeInOut
-  }, '+=0.1')
-  .to(decoTxt, {
-    duration: .3,
-    opacity: 1
-  }, '-=0.1')
-  .to(decoBar, {
-    duration: .9,
-    x: decoTxtWidth,
-    width: 0,
-    ease: Power2.easeIn
-  })
-  .timeScale(1.5)
-
+  delay: 0.2,
+})
+.set(decoTxt, {
+  color: '#fff',
+  fontWeight: 'bold',
+  opacity: 0,
+  x: 0
+})
+.set(decoBar, {
+  left: 1,
+  backgroundColor: '#fff',
+  immediateRender: true
+})
+.to(decoBar, {
+  duration: 0.05,
+  backgroundColor: '#fff'
+}, '+=0.15')
+.to(decoBar, {
+  duration: 1,
+  width: decoTxtWidth + 22,
+  ease: Power2.easeInOut
+}, '+=0.1')
+.to(decoTxt, {
+  duration: 0.4,
+  opacity: 1
+}, '-=0.1')
+.to(decoBar, {
+  duration: 0.9,
+  x: decoTxtWidth + 22,
+  width: 0,
+  ease: Power2.easeIn
+})
+.timeScale(1.5);
 
 
 

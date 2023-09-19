@@ -280,7 +280,6 @@ header .trigger span::before {
 .visual-area .visual-slogan {
   max-width: 320px;
   font-size: 27px;
-  letter-spacing: 1.3;
   color: #fff;
 }
 .visual-area .visual-slogan .alcon {
@@ -289,6 +288,7 @@ header .trigger span::before {
   margin-bottom: 40px;
   width: 270px;
   height: 70px;
+  font-weight: bold;
 }
 .visual-area .visual-slogan .alcon::before {
   content: "alcon";
