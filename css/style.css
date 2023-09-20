@@ -1073,6 +1073,9 @@ footer .sns-ball i.sns3 {
   top: 0;
   bottom: 0;
 }
+footer .sns-ball i:hover {
+  color: #f6be26;
+}
 footer .sns-ball .active-btn {
   position: absolute;
   margin: auto;
@@ -1538,6 +1541,7 @@ footer .sns-ball .active-btn::before {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 15px;
 }
 .search-modal .search-content .search-field::before {
   content: "\f002";

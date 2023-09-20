@@ -1172,6 +1172,10 @@ footer {
         top:0;
         bottom:0;
       }
+
+      &:hover {
+        color: $orange;
+      }
     }
 
     .active-btn {
