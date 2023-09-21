@@ -2,6 +2,8 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
+
+/* header */
 window.addEventListener('scroll', function () {
   if (window.scrollY > 50) {
     gsap.to('header', {
