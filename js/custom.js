@@ -1,8 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
 
-window.addEventListener("load", function () {
   /* visual */
-
   const visualInner = document.querySelector('.visual-inner');
   const visualArea = document.querySelector('.visual-area');
   let visualInnerWidth, scrollLength;
@@ -27,9 +25,8 @@ window.addEventListener("load", function () {
       start: "top",
       end: () => `+=${visualInnerWidth}`
     },
+    
   })
-})
-
 
 
 const decoTxt = document.querySelector('.deco-txt')
@@ -101,7 +98,6 @@ triggerBtn.addEventListener('click',()=> {
 })
 
 
-
 const navItems = document.querySelectorAll('.nav-item');
 navItems.forEach(navItem => {
   const navTitle = navItem.querySelector('.nav-title');
@@ -112,8 +108,6 @@ navItems.forEach(navItem => {
 
   })
 })
-
-
 
 
 
@@ -172,6 +166,7 @@ const swiper = new Swiper('.lense-area .swiper', {
           trigger: item,
           start: 'top 80%',
           end: 'center 80%',
+          toggleActions: 'restart none none none'
         },
       });
     });
@@ -185,25 +180,23 @@ const swiper = new Swiper('.lense-area .swiper', {
           trigger: orderItem,
           start: 'top 80%',
           end: 'center 80%',
+          toggleActions: 'restart none none none'
         },
       });
     })
   });
   
 
-
-
-
 /* sns */
 const snsBall = document.querySelector('.sns-ball')
 
 snsBall.addEventListener('click', () => {
-  snsBall.classList.toggle('active');
+  snsBall.classList.toggle('active')
 });
 
 document.addEventListener('click', (event) => {
   if (!snsBall.contains(event.target)) {
-    snsBall.classList.remove('active');
+    snsBall.classList.remove('active')
   }
 });
 
