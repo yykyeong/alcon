@@ -1,0 +1,291 @@
+@mixin ms(
+  $cssClass: 'ms-container',
+  $slider-length: 400px,
+  $slider-center: false,
+  $slide-width: 90px,
+  $slide-height: 90px,
+  $vertical: false,
+  $reverse: false,
+  $debug: false
+) {
+  // Slider container
+  .#{$cssClass} {
+    position: relative;
+    @if $slider-center {
+      margin: 0 auto;
+    }
+    overflow: hidden;
+    @if $debug {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    @if $debug {
+      // Just for testing the current slide position (centered)
+      &:before {
+        content: '';
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 100%;
+      }
+    }
+
+    @if $vertical {
+      // Styles for vertical slider
+      &.ms-container--vertical {
+        width: $slide-width;
+        height: $slider-length;
+        max-height: 100%;
+
+        @if $debug {
+          &:before {
+            left: 0;
+            top: calc(50% - #{$slide-height / 2});
+            width: 100%;
+            height: $slide-height;
+          }
+        }
+
+        // Centering slider track vertically, to get current slide centered
+        .ms-track {
+          flex-direction: column;
+          top: calc(50% - (#{$slide-height} / 2));
+        }
+
+        @if $reverse {
+          // Reverse styles
+          &.ms-container--reverse .ms-track {
+            flex-direction: column-reverse;
+            top: auto;
+            bottom: calc(50% - (#{$slide-height} / 2));
+          }
+        }
+
+        // Positioning slides vertically
+        .ms-slide {
+          display: flex;
+        }
+      }
+    } @else {
+      // Styles for horizontal slider
+      &.ms-container--horizontal {
+        width: $slider-length;
+        height: $slide-height;
+        max-width: 100%;
+
+        @if $debug {
+          &:before {
+            left: calc(50% - #{$slide-width / 2});
+            top: 0;
+            width: $slide-width;
+            height: 100%;
+          }
+        }
+
+        // Centering slider track horizontally, to get current slide centered
+        .ms-track {
+          left: calc(50% - (#{$slide-width} / 2));
+        }
+
+        @if $reverse {
+          // Reverse styles
+          &.ms-container--reverse .ms-track {
+            flex-direction: row-reverse;
+            left: auto;
+            right: calc(50% - #{$slide-width / 2});
+          }
+        }
+
+        // Positioning slides horizontally
+        .ms-slide {
+          display: inline-flex;
+        }
+      }
+    }
+
+    // Slider track
+    .ms-track {
+      display: flex;
+      position: absolute;
+      white-space: nowrap;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    // Slides
+    .ms-slide {
+      align-items: center;
+      justify-content: center;
+      width: $slide-width;
+      height: $slide-height;
+      user-select: none;
+
+      @if $debug {
+        // A testing backgrounds for slides
+        &:nth-child(2n) {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+        &:nth-child(2n + 1) {
+          background-color: rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+}
+
+
+$visual-icons-slide-width: 240px;
+$visual-icons-slide-height: 240px;
+$visual-titles-slide-width: 400px;
+$visual-titles-slide-height: 170px;
+$visual-links-slide-width: 120px;
+$visual-links-slide-height: 60px;
+$visual-imgs-slide-width: 700px;
+$visual-imgs-slide-height: 400px;
+
+/***************** icon  *******************/ 
+@include ms(
+  $cssClass: 'visual-icons',
+  $slider-length: $visual-icons-slide-width,
+  $slider-center: false,
+  $slide-width: $visual-icons-slide-width,
+  $slide-height: $visual-icons-slide-height,
+  $vertical: false,
+  $reverse: false,
+  $debug: false
+);
+
+.visual-icons {
+  position: absolute;
+  left: calc(50% - (#{$visual-imgs-slide-width} / 2 + 30px));
+  top: calc(50% - (#{$visual-imgs-slide-height} / 2 + #{$visual-icons-slide-height} / 2 - 20px));
+  pointer-events: none;
+  z-index: 1;
+  border-radius: 50%;
+
+  .ms-slide {
+    font-size: 9em;
+    font-weight: 900;
+
+    i {
+      font-size: 110px;
+      color: $point-color;
+    }
+  }
+}
+
+/***************** title  *******************/
+@include ms(
+  $cssClass: 'visual-titles',
+  $slider-length: $visual-titles-slide-height,
+  $slider-center: false,
+  $slide-width: $visual-titles-slide-width,
+  $slide-height: $visual-titles-slide-height,
+  $vertical: true,
+  $reverse: true,
+  $debug: false
+);
+
+.visual-titles {
+  position: absolute;
+  left: calc(50% - (#{$visual-imgs-slide-width} / 2 + 70px));
+  top: calc(50% - (#{$visual-titles-slide-height} / 2));
+  z-index: 1;
+  pointer-events: none;
+
+  .ms-track {
+    white-space: normal;
+  }
+
+  .ms-slide {
+    .visual-title {
+      color: $white;
+      font-size: 25px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+    }
+  }
+}
+
+/***************** link  *******************/ 
+@include ms(
+  $cssClass: 'visual-links',
+  $slider-length: $visual-links-slide-height,
+  $slider-center: false,
+  $slide-width: $visual-links-slide-width,
+  $slide-height: $visual-links-slide-height,
+  $vertical: true,
+  $reverse: false,
+  $debug: false
+);
+
+.visual-links {
+  position: absolute;
+  left: calc(50% - (#{$visual-imgs-slide-width} / 2 + 70px));
+  top: calc(50% + (#{$visual-titles-slide-height} / 2 + 20px));
+  z-index: 1;
+
+  .visual-link {
+    font-weight: 600;
+    padding: 5px 0 8px;
+    border-bottom: 2px solid white;
+    cursor: pointer;
+    color: white;
+    transition: .3s;
+
+    &:hover {
+      color: $orange;
+      border-bottom: 2px solid $orange;
+    }
+  }
+}
+
+/***************** img  *******************/ 
+@include ms(
+  $cssClass: 'visual-imgs',
+  $slider-length: 100%,
+  $slider-center: false,
+  $slide-width: $visual-imgs-slide-width,
+  $slide-height: $visual-imgs-slide-height,
+  $vertical: false,
+  $reverse: false,
+  $debug: false
+);
+.visual-imgs {
+  left: calc(50% - (#{$visual-imgs-slide-width} / 2 - 70px));
+
+
+  &.ms-container--horizontal .ms-track {
+    left: -70px;
+
+  }
+
+  .ms-slide {
+
+    &:nth-child(1) .visual-img {
+      background-image: url('/img/visual01.png');
+    }
+    &:nth-child(2) .visual-img {
+      background-image: url('/img/visual02.png');
+    }
+    &:nth-child(3) .visual-img {
+      background-image: url('/img/visual03.png');
+    }
+    &:nth-child(4) .visual-img {
+      background-image: url('/img/visual04.png');
+    }
+  }
+
+  .visual-imgbox {
+    width: 80%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, .3);
+    overflow: hidden;
+  }
+
+  .visual-img {
+    width: 100%;
+    height: 100%;
+    background: center / 100% no-repeat;
+    cursor: grab;
+  }
+}

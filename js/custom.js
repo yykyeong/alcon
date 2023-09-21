@@ -1,74 +1,21 @@
+'use strict ';
+
 gsap.registerPlugin(ScrollTrigger);
 
-  /* visual */
-  const visualInner = document.querySelector('.visual-inner');
-  const visualArea = document.querySelector('.visual-area');
-  let visualInnerWidth, scrollLength;
+window.addEventListener('scroll', function () {
+  if (window.scrollY > 50) {
+    gsap.to('header', {
+      backgroundColor: 'rgb(255,255,255)',
+      duration: 0.3, 
+    });
+  } else {
 
-  function calculateScrollLength() {
-    visualInnerWidth = visualInner.offsetWidth;
-    scrollLength = visualInnerWidth - window.innerWidth;
+    gsap.to('header', {
+      backgroundColor: 'rgba(255, 255, 255, 0)', 
+      duration: 0.3, 
+    });
   }
-
-  calculateScrollLength();
-
-  window.addEventListener("resize", calculateScrollLength);
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  gsap.to(visualInner, {
-    x: -scrollLength,
-    scrollTrigger: {
-      trigger: visualArea,
-      scrub: 1,
-      pin: true,
-      start: "top",
-      end: () => `+=${visualInnerWidth}`
-    },
-    
-  })
-
-
-const decoTxt = document.querySelector('.deco-txt')
-const decoBar = document.querySelector('.deco-bar')
-let decoTxtWidth = decoTxt.offsetWidth;
-
-gsap.timeline({
-  delay: 0.2,
-})
-.set(decoTxt, {
-  color: '#fff',
-  fontWeight: 'bold',
-  opacity: 0,
-  x: 0
-})
-.set(decoBar, {
-  left: 1,
-  backgroundColor: '#fff',
-  immediateRender: true
-})
-.to(decoBar, {
-  duration: 0.05,
-  backgroundColor: '#fff'
-}, '+=0.15')
-.to(decoBar, {
-  duration: 1,
-  width: decoTxtWidth + 22,
-  ease: Power2.easeInOut
-}, '+=0.1')
-.to(decoTxt, {
-  duration: 0.4,
-  opacity: 1
-}, '-=0.1')
-.to(decoBar, {
-  duration: 0.9,
-  x: decoTxtWidth + 22,
-  width: 0,
-  ease: Power2.easeIn
-})
-.timeScale(1.5);
-
-
+});
 
 /* search */
 const searchBtn = document.querySelector('.search')
@@ -108,6 +55,104 @@ navItems.forEach(navItem => {
 
   })
 })
+
+
+
+
+
+/* visual */
+const slidersContainer = document.querySelector('.visual-content');
+
+// icon
+const visualIcons = new MomentumSlider({
+    el: slidersContainer,
+    cssClass: 'visual-icons',
+    range: [0, 3],
+    rangeContent: function (i) {
+        const icons = [
+            'fa-clock',
+            'fa-clock',
+            'fa-calendar-days',
+            'fa-bottle-droplet'
+        ];
+        return '<i class="fa-solid ' + icons[i] + '"></i>';
+    },
+    style: {
+        transform: [{scale: [0.4, 1]}],
+        opacity: [0, 1]
+    },
+    interactive: false
+});
+
+// title
+const titles = [
+    '매일착용 소프트콘택트렌즈<br>DAILIES',
+    '매일착용 소프트콘택트렌즈<br>DAILIES ILLUMINATE',
+    '연속착용 소프트콘택트렌즈<br>AIR OPTIX',
+    '렌즈관리용액<br>OPTI FREE'
+];
+const visualName = new MomentumSlider({
+    el: slidersContainer,
+    cssClass: 'visual-titles',
+    range: [0, 3],
+    rangeContent: function (i) {
+        return '<h3 class="visual-title">'+ titles[i] +'</h3>';
+    },
+    vertical: true,
+    reverse: true,
+    style: {
+        opacity: [0, 1]
+    },
+    interactive: false
+});
+
+// link
+const visualLink = new MomentumSlider({
+    el: slidersContainer,
+    cssClass: 'visual-links',
+    range: [0, 3],
+    rangeContent: function () {
+        return '<a class="visual-link">제품 자세히 보기</a>';
+    },
+    vertical: true,
+    interactive: false
+});
+
+// page
+const pagination = document.querySelector('.pagination');
+const paginationItems = [].slice.call(pagination.children);
+pagination.addEventListener('click', function(e) {
+    if (e.target.matches('.pagination-button')) {
+        var index = paginationItems.indexOf(e.target.parentNode);
+        visualImgs.select(index);
+    }
+});
+
+
+// image
+const visualImgs = new MomentumSlider({
+    el: slidersContainer,
+    cssClass: 'visual-imgs',
+    range: [0, 3],
+    rangeContent: function () {
+        return '<div class="visual-imgbox"><div class="visual-img"></div></div>';
+    },
+    sync: [visualIcons, visualName, visualLink],
+    style: {
+        '.visual-img': {
+            transform: [{scale: [1.5
+            , 1]}]
+        }
+    },
+    change: function(newIndex, oldIndex) {
+        if (typeof oldIndex !== 'undefined') {
+            paginationItems[oldIndex].classList.remove('pagination-item--active');
+        }
+        paginationItems[newIndex].classList.add('pagination-item--active');
+    }
+});
+
+
 
 
 
