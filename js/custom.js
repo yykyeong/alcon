@@ -1,5 +1,77 @@
 gsap.registerPlugin(ScrollTrigger);
 
+window.addEventListener("load", function () {
+  /* visual */
+
+  const visualInner = document.querySelector('.visual-inner');
+  const visualArea = document.querySelector('.visual-area');
+  let visualInnerWidth, scrollLength;
+
+  function calculateScrollLength() {
+    visualInnerWidth = visualInner.offsetWidth;
+    scrollLength = visualInnerWidth - window.innerWidth;
+  }
+
+  calculateScrollLength();
+
+  window.addEventListener("resize", calculateScrollLength);
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to(visualInner, {
+    x: -scrollLength,
+    scrollTrigger: {
+      trigger: visualArea,
+      scrub: 1,
+      pin: true,
+      start: "top",
+      end: () => `+=${visualInnerWidth}`
+    },
+  })
+})
+
+
+
+const decoTxt = document.querySelector('.deco-txt')
+const decoBar = document.querySelector('.deco-bar')
+let decoTxtWidth = decoTxt.offsetWidth;
+
+gsap.timeline({
+  delay: 0.2,
+})
+.set(decoTxt, {
+  color: '#fff',
+  fontWeight: 'bold',
+  opacity: 0,
+  x: 0
+})
+.set(decoBar, {
+  left: 1,
+  backgroundColor: '#fff',
+  immediateRender: true
+})
+.to(decoBar, {
+  duration: 0.05,
+  backgroundColor: '#fff'
+}, '+=0.15')
+.to(decoBar, {
+  duration: 1,
+  width: decoTxtWidth + 22,
+  ease: Power2.easeInOut
+}, '+=0.1')
+.to(decoTxt, {
+  duration: 0.4,
+  opacity: 1
+}, '-=0.1')
+.to(decoBar, {
+  duration: 0.9,
+  x: decoTxtWidth + 22,
+  width: 0,
+  ease: Power2.easeIn
+})
+.timeScale(1.5);
+
+
 
 /* search */
 const searchBtn = document.querySelector('.search')
@@ -43,61 +115,6 @@ navItems.forEach(navItem => {
 
 
 
-/* visual */
-const visualInner = document.querySelector('.visual-inner')
-const visualInnerWidth = visualInner.offsetWidth;
-const scrollLength = visualInnerWidth - window.innerWidth;
-
-gsap.to(visualInner, {
-  scrollTrigger: {
-    scrub: 1,
-    trigger: '.visual-area',
-    pin: true,
-    start: 'top top',
-    end: visualInnerWidth,
-  },
-  x: -scrollLength,
-  ease: 'none'
-})
-
-const decoTxt = document.querySelector('.deco-txt')
-const decoBar = document.querySelector('.deco-bar')
-let decoTxtWidth = decoTxt.offsetWidth;
-
-gsap.timeline({
-  delay: 0.2,
-})
-.set(decoTxt, {
-  color: '#fff',
-  fontWeight: 'bold',
-  opacity: 0,
-  x: 0
-})
-.set(decoBar, {
-  left: 1,
-  backgroundColor: '#fff',
-  immediateRender: true
-})
-.to(decoBar, {
-  duration: 0.05,
-  backgroundColor: '#fff'
-}, '+=0.15')
-.to(decoBar, {
-  duration: 1,
-  width: decoTxtWidth + 22,
-  ease: Power2.easeInOut
-}, '+=0.1')
-.to(decoTxt, {
-  duration: 0.4,
-  opacity: 1
-}, '-=0.1')
-.to(decoBar, {
-  duration: 0.9,
-  x: decoTxtWidth + 22,
-  width: 0,
-  ease: Power2.easeIn
-})
-.timeScale(1.5);
 
 
 

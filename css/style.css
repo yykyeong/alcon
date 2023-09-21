@@ -44,10 +44,6 @@ body.fixed {
   overflow-y: scroll;
 }
 
-.main {
-  padding-top: 60px;
-}
-
 .dimmed-layer {
   position: fixed;
   top: 0;
