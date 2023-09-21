@@ -1,8 +1,6 @@
 gsap.registerPlugin(ScrollTrigger);
 
-window.addEventListener("load", function () {
   /* visual */
-
   const visualInner = document.querySelector('.visual-inner');
   const visualArea = document.querySelector('.visual-area');
   let visualInnerWidth, scrollLength;
@@ -27,9 +25,8 @@ window.addEventListener("load", function () {
       start: "top",
       end: () => `+=${visualInnerWidth}`
     },
+    
   })
-})
-
 
 
 const decoTxt = document.querySelector('.deco-txt')
@@ -190,9 +187,6 @@ const swiper = new Swiper('.lense-area .swiper', {
     })
   });
   
-
-
-
 
 /* sns */
 const snsBall = document.querySelector('.sns-ball')
