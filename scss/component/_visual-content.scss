@@ -284,7 +284,7 @@ $visual-imgs-slide-height: 400px;
 
         .alcon {
           left: 53%;
-          bottom: 55px; 
+          bottom: calc(50% - (#{$visual-icons-slide-width} / 2 + 125px));
           transform: translateX(-50%) scale(.7);
         }
       }

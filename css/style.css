@@ -1399,7 +1399,7 @@ footer .sns-ball .active-btn::before {
 @media (max-width: 767px) {
   .visual-area .visual-inner .visual-content .alcon {
     left: 53%;
-    bottom: 55px;
+    bottom: calc(50% - (240px / 2 + 125px));
     transform: translateX(-50%) scale(0.7);
   }
   .visual-area .visual-icons {
