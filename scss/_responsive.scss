@@ -102,41 +102,6 @@
 
   }
 
-  /* visual */
-  .visual-area {
-    .visual-inner {
-      .visual-content {
-        .alcon {
-          left: 54%;
-          transform: translateX(-50%);
-        }
-      }
-    }
-    .visual-icons {
-      left: calc(50% - (#{$visual-icons-slide-width} / 2));
-    }
-    .visual-imgs {
-      overflow: visible;
-    }
-    .visual-titles {
-      left: calc(50% - (#{$visual-titles-slide-width} / 2));
-      top: calc(50% - (#{$visual-titles-slide-height} / 2 + 50px));
-      text-align: center;
-  
-      .ms-slide {
-        transform: scale(0.8);
-      }
-    }
-    .visual-links {
-      left: calc(50% - (#{$visual-links-slide-width} / 2));
-      top: calc(50% + (#{$visual-links-slide-height} / 2 + 50px));
-    }
-    .pagination {
-      left: 50%;
-      top: calc(100% - 50px);
-      transform: translateX(-50%);
-    }
-  }
 
   /* lense */
   .lense-area {

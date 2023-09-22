@@ -8,6 +8,7 @@
   $reverse: false,
   $debug: false
 ) {
+
   // Slider container
   .#{$cssClass} {
     position: relative;
@@ -20,7 +21,6 @@
     }
 
     @if $debug {
-      // Just for testing the current slide position (centered)
       &:before {
         content: '';
         position: absolute;
@@ -30,7 +30,6 @@
     }
 
     @if $vertical {
-      // Styles for vertical slider
       &.ms-container--vertical {
         width: $slide-width;
         height: $slider-length;
@@ -45,28 +44,23 @@
           }
         }
 
-        // Centering slider track vertically, to get current slide centered
         .ms-track {
           flex-direction: column;
           top: calc(50% - (#{$slide-height} / 2));
         }
 
         @if $reverse {
-          // Reverse styles
           &.ms-container--reverse .ms-track {
             flex-direction: column-reverse;
             top: auto;
             bottom: calc(50% - (#{$slide-height} / 2));
           }
         }
-
-        // Positioning slides vertically
         .ms-slide {
           display: flex;
         }
       }
     } @else {
-      // Styles for horizontal slider
       &.ms-container--horizontal {
         width: $slider-length;
         height: $slide-height;
@@ -80,14 +74,11 @@
             height: 100%;
           }
         }
-
-        // Centering slider track horizontally, to get current slide centered
         .ms-track {
           left: calc(50% - (#{$slide-width} / 2));
         }
 
         @if $reverse {
-          // Reverse styles
           &.ms-container--reverse .ms-track {
             flex-direction: row-reverse;
             left: auto;
@@ -102,7 +93,6 @@
       }
     }
 
-    // Slider track
     .ms-track {
       display: flex;
       position: absolute;
@@ -112,7 +102,6 @@
       list-style: none;
     }
 
-    // Slides
     .ms-slide {
       align-items: center;
       justify-content: center;
@@ -121,7 +110,6 @@
       user-select: none;
 
       @if $debug {
-        // A testing backgrounds for slides
         &:nth-child(2n) {
           background-color: rgba(0, 0, 0, 0.1);
         }
@@ -132,7 +120,6 @@
     }
   }
 }
-
 
 $visual-icons-slide-width: 240px;
 $visual-icons-slide-height: 240px;
@@ -164,11 +151,8 @@ $visual-imgs-slide-height: 400px;
   border-radius: 50%;
 
   .ms-slide {
-    font-size: 9em;
-    font-weight: 900;
-
     i {
-      font-size: 110px;
+      font-size: 100px;
       color: $point-color;
     }
   }
@@ -288,4 +272,45 @@ $visual-imgs-slide-height: 400px;
     background: center / 100% no-repeat;
     cursor: grab;
   }
+}
+
+
+@media (max-width: 767px) {
+
+  .visual-area {
+    .visual-inner {
+      .visual-content {
+
+        .alcon {
+          left: 53%; 
+          transform: translateX(-50%) scale(.7);
+        }
+      }
+    }
+    .visual-icons {
+      left: calc(50% - (#{$visual-icons-slide-width} / 2));
+    }
+    .visual-imgs {
+      overflow: visible;
+    }
+    .visual-titles {
+      left: calc(50% - (#{$visual-titles-slide-width} / 2));
+      top: calc(50% - (#{$visual-titles-slide-height} / 2 + 50px));
+      text-align: center;
+  
+      .ms-slide {
+        transform: scale(.8);
+      }
+    }
+    .visual-links {
+      left: calc(50% - (#{$visual-links-slide-width} / 2));
+      top: calc(50% + (#{$visual-links-slide-height} / 2 + 50px));
+    }
+    .pagination {
+      left: 50%;
+      top: calc(100% - 50px);
+      transform: translateX(-50%);
+    }
+  }
+
 }
