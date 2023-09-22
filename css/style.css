@@ -1399,7 +1399,6 @@ footer .sns-ball .active-btn::before {
 @media (max-width: 767px) {
   .visual-area .visual-inner .visual-content .alcon {
     left: 53%;
-    bottom: 25px;
     transform: translateX(-50%) scale(0.7);
   }
   .visual-area .visual-icons {
@@ -1422,7 +1421,7 @@ footer .sns-ball .active-btn::before {
   }
   .visual-area .pagination {
     left: 50%;
-    top: calc(50% + (60px / 2 + 150px));
+    top: calc(100% - 50px);
     transform: translateX(-50%);
   }
 }

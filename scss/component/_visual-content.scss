@@ -121,6 +121,7 @@
   }
 }
 
+
 $visual-icons-slide-width: 240px;
 $visual-icons-slide-height: 240px;
 $visual-titles-slide-width: 400px;
@@ -282,8 +283,7 @@ $visual-imgs-slide-height: 400px;
       .visual-content {
 
         .alcon {
-          left: 53%;
-          bottom: 25px;
+          left: 53%; 
           transform: translateX(-50%) scale(.7);
         }
       }
@@ -309,8 +309,7 @@ $visual-imgs-slide-height: 400px;
     }
     .pagination {
       left: 50%;
-      // top: calc(100% - 50px);
-      top: calc(50% + (#{$visual-links-slide-height} / 2 + 150px));
+      top: calc(100% - 50px);
       transform: translateX(-50%);
     }
   }
