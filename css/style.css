@@ -337,8 +337,8 @@ header .trigger span::before {
 }
 .visual-area .visual-inner .visual-content .alcon {
   position: absolute;
-  bottom: 70px;
-  left: 50px;
+  bottom: 35px;
+  left: 35px;
   width: 270px;
   height: 70px;
   font-weight: bold;
@@ -1399,6 +1399,7 @@ footer .sns-ball .active-btn::before {
 @media (max-width: 767px) {
   .visual-area .visual-inner .visual-content .alcon {
     left: 53%;
+    bottom: 55px;
     transform: translateX(-50%) scale(0.7);
   }
   .visual-area .visual-icons {

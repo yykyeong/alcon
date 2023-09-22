@@ -60,6 +60,8 @@ navItems.forEach(navItem => {
 
 
 /* visual */
+window.addEventListener('load', function() {
+  /* visual */
 const slidersContainer = document.querySelector('.visual-content')
 
 // icon
@@ -172,6 +174,9 @@ function autoPlay() {
 }
 
 autoPlayInterval = setInterval(autoPlay, 3000)
+});
+
+
 
 /* lense */
 
