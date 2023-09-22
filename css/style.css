@@ -132,6 +132,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0 16px;
+  transition: background-color 0.3s;
 }
 header .header-logo {
   display: inline-block;

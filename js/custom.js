@@ -5,19 +5,9 @@ gsap.registerPlugin(ScrollTrigger)
 
 /* header */
 window.addEventListener('scroll', function () {
-  if (window.scrollY > 50) {
-    gsap.to('header', {
-      backgroundColor: 'rgb(255,255,255)',
-      duration: 0.3, 
-    })
-  } else {
+  document.querySelector('header').style.backgroundColor = window.scrollY > 50 ? '#fff' : 'transparent';
+});
 
-    gsap.to('header', {
-      backgroundColor: 'rgba(255, 255, 255, 0)', 
-      duration: 0.3, 
-    })
-  }
-})
 
 /* search */
 const searchBtn = document.querySelector('.search')
