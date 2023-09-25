@@ -69,14 +69,6 @@ body.fixed {
     transform: translateX(-170px);
   }
 }
-@keyframes visual-wave {
-  0% {
-    transform: translate3d(-90px, 0, 0);
-  }
-  100% {
-    transform: translate3d(85px, 0, 0);
-  }
-}
 @keyframes more01 {
   0% {
     left: -100%;

@@ -153,7 +153,7 @@ pagination.addEventListener('click', function(e) {
         clearInterval(autoPlayInterval) 
         setTimeout(function () {
             autoPlayInterval = setInterval(autoPlay, 3000)
-        }, 1000)
+        }, 3000)
     }
 })
 
